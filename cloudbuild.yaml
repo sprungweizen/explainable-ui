@@ -1,0 +1,22 @@
+steps:
+  - id: 'build'
+    name: 'gcr.io/cloud-builders/docker'
+    args: [ 'build', '-t', 'gcr.io/greenhat23mun-8048/explainable_ui:0.0.1', '.' ]
+  - id: 'deploy'
+    name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/greenhat23mun-8048/explainable_ui:0.0.1' ]
+
+  - id: 'deploy'
+    name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: 'gcloud'
+    args:
+      [
+        'run',
+        'deploy',
+        'explainableui',
+        '--source=.',
+        '--allow-unauthenticated',
+        '--region=europe-west3',
+        '--timeout',
+        '3600',
+      ]
