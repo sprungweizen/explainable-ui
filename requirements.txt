@@ -1,1 +1,3 @@
 Django~=4.2.5
+ultralytics~=8.0.184
+fastai~=2.7.12
