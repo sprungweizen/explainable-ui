@@ -1,8 +1,8 @@
 steps:
-  - id: 'build'
+  - id: 'build docker'
     name: 'gcr.io/cloud-builders/docker'
     args: [ 'build', '-t', 'gcr.io/greenhat23mun-8048/explainable_ui:0.0.1', '.' ]
-  - id: 'deploy'
+  - id: 'deploy docker'
     name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/greenhat23mun-8048/explainable_ui:0.0.1' ]
 
