@@ -18,5 +18,5 @@ steps:
         '--allow-unauthenticated',
         '--region=europe-west3',
         '--timeout',
-        '3600',
+        '7800',
       ]
