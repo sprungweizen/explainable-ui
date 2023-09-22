@@ -22,7 +22,7 @@ def segment_image_view(request):
         img = PILImage.create(file)
 
         # convert the file from png to jpg
-        model = YOLO('static/best.onnx')
+        model = YOLO('static/best_2.onnx')
         prediction = model.predict(resize_image(img), save=True)
         # read stored file from prediction.save_dir+prediction.path with os
         print(type(prediction[0]))
